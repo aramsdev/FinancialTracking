@@ -7,12 +7,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity(name="users")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEntity {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,5 +28,7 @@ public class UserEntity {
     private String firstName;
     @Column(nullable = false)
     private String lastName;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Card> cards;
 
 }

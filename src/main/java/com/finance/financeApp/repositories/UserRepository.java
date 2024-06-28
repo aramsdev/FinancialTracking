@@ -1,8 +1,12 @@
 package com.finance.financeApp.repositories;
 
-import com.finance.financeApp.domain.entities.UserEntity;
+import com.finance.financeApp.domain.entities.Card;
+import com.finance.financeApp.domain.entities.User;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository<UserEntity, Long> {
+import java.util.List;
+
+public interface UserRepository extends CrudRepository<User, Long> {
+
 
 }

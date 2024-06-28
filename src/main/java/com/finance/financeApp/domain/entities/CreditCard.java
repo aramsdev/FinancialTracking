@@ -12,7 +12,11 @@ import java.math.BigDecimal;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "debit_cards")
-public class DebitCardEntity extends CardEntity {
-    private BigDecimal balance;
+@Entity(name = "credit_cards")
+public class CreditCard extends Card {
+    private BigDecimal creditLimit;
+    private BigDecimal interestRate;
+    private int statementDay;
+    private int paymentDueDay;
+
 }

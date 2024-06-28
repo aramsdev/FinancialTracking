@@ -7,15 +7,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "cards")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class CardEntity {
+public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,5 +22,7 @@ public class CardEntity {
     @Size(max = 4,min = 4)
     private String lastCardDigits;
     private String name;
-
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
 }
